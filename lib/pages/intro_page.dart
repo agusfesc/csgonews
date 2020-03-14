@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:getflutter/getflutter.dart';
 
 
 
@@ -23,7 +24,7 @@ class _IntroPageState extends State<IntroPage> {
         fit: StackFit.expand,
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(color: Colors.orange),
+            decoration: BoxDecoration(color: Color(0xFFF2F3F4)),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -65,8 +66,12 @@ class _IntroPageState extends State<IntroPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    CircularProgressIndicator(
-                        valueColor: new AlwaysStoppedAnimation<Color>(Colors.white)
+                    GFLoader(
+                        type:GFLoaderType.circle,
+                        loaderColorOne: Color(0xFFF08080) ,
+                        loaderColorTwo: Color(0xFFE9967A) ,
+                        loaderColorThree: Color(0xFFFA8072) ,
+
                     ),
                     Padding(padding: EdgeInsets.only(top: 20.0),
                     ),
