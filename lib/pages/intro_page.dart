@@ -1,3 +1,4 @@
+import 'package:csgonews/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:getflutter/getflutter.dart';
@@ -14,7 +15,19 @@ class _IntroPageState extends State<IntroPage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 5), () => print("Splash Success") );
+    startTimer();
+  }
+
+  startTimer() async {
+    var duration = Duration(seconds: 6);
+    return Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pushReplacement(context, MaterialPageRoute(
+      builder: (context) => HomePage()
+    )
+    );
   }
 
   @override
@@ -67,31 +80,32 @@ class _IntroPageState extends State<IntroPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     GFLoader(
-                        type:GFLoaderType.circle,
-                        loaderColorOne: Color(0xFFF08080) ,
-                        loaderColorTwo: Color(0xFFE9967A) ,
-                        loaderColorThree: Color(0xFFFA8072) ,
+                      type:GFLoaderType.circle,
+                      loaderColorOne: Color(0xFFF08080) ,
+                      loaderColorTwo: Color(0xFFE9967A) ,
+                      loaderColorThree: Color(0xFFFA8072) ,
 
                     ),
                     Padding(padding: EdgeInsets.only(top: 20.0),
                     ),
                     Text("LA INFORMACIÓN DE LA ESCENA ARGENTINA EN TU CELULAR",
-                    style: TextStyle(
-                      fontSize: 13.0,
-                      color: Color(0xFF545454),
+                      style: TextStyle(
+                        fontSize: 13.0,
+                        color: Color(0xFF545454),
 
                         fontFamily: 'Raleway',
 
-                    ),
+                      ),
                     )
                   ],
                 ),
               )
 
-          ],
+            ],
           )
         ],
       ),
+
     );
   }
 

@@ -1,3 +1,4 @@
+import 'package:csgonews/pages/home_page.dart';
 import 'package:csgonews/pages/intro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,11 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-
-      ),
+      theme: ThemeData.dark(),
     routes: {
         "/": (BuildContext context) => IntroPage(),
+        "/home": (BuildContext context) => HomePage(),
     },
     );
   }
